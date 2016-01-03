@@ -42,7 +42,7 @@ import ModularFoundation
             flowController.showPlainOldFeatureView(featureUUID) // show module origin view
             return true
         default:
-            println("Invalid URL \(URLString)")
+            print("Invalid URL \(URLString)")
             return false
         }
     }

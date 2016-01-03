@@ -18,7 +18,7 @@ class FlowController: NSObject {
     
     // MARK: Show Methods
     func showHomeView() {
-        let homeViewController = HomeViewController.createInstance(flowController: self)
+        let homeViewController = HomeViewController.createInstance(self)
         if let moduleViewController = moduleViewController {
             homeViewController.launchInContainerViewController(moduleViewController, animated: false)            
         }

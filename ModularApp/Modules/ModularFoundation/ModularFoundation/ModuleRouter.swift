@@ -51,9 +51,9 @@ class InternalModuleRouter: ModuleRouter {
     
     func moduleForURLPath(URLPath: String) -> ModuleViewController? {
         if let moduleViewControllerClass = moduleURLMap[URLPath] as? ModuleViewController.Type {
-            return moduleViewControllerClass()
+            return moduleViewControllerClass.init()
         }
-        println("Unable find module for URL: \(URLPath)")
+        print("Unable find module for URL: \(URLPath)")
         return nil
     }
 }

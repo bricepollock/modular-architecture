@@ -17,14 +17,14 @@ class TextPageViewController: UIViewController {
     
     // MARK: Life Cycle
     
-    class func createInstance(#flowController: FlowController, featureUUID: String) -> TextPageViewController {
+    class func createInstance(flowController flowController: FlowController, featureUUID: String) -> TextPageViewController {
         let moduleStoryboard = UIStoryboard(name: "TextPageViewController", bundle: NSBundle(forClass: TextPageViewController.self))
         let newViewControllerInstance = moduleStoryboard.instantiateViewControllerWithIdentifier("TextPageViewController") as! TextPageViewController
         newViewControllerInstance.presenter = TextPagePresenter(flowController: flowController, featureUUID: featureUUID)
         return newViewControllerInstance
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

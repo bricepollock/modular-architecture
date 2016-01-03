@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
 
     // MARK: Life Cycle
     
-    class func createInstance(#flowController: FlowController) -> HomeViewController {
+    class func createInstance(flowController: FlowController) -> HomeViewController {
         let moduleStoryboard = UIStoryboard(name: "HomeViewController", bundle: NSBundle(forClass: HomeViewController.self))
         let newViewControllerInstance = moduleStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
         
@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         return newViewControllerInstance
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
