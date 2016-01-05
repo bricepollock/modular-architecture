@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ModuleURL: Printable {
+public enum ModuleURL: CustomStringConvertible {
     case HomeModuleURL
     case PlainOldFeatureModuleURL(featureUUID: String)
     

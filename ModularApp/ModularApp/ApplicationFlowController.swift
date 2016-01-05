@@ -19,7 +19,7 @@ import ModularFoundation
             rootViewController = mainNavigationController
             homeViewController.handleModuleURL(launchModuleURL)
         } else {
-            println("Unable to launch home view")
+            print("Unable to launch home view")
             rootViewController = UINavigationController()
         }
         super.init()
@@ -46,7 +46,7 @@ import ModularFoundation
             }
             return true
         default:
-            println("Home Module cannot handle URL: \(moduleURL)")
+            print("Home Module cannot handle URL: \(moduleURL)")
             return false
         }
     }

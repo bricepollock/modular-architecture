@@ -45,7 +45,7 @@ import ModularFoundation
         case .HomeModuleURL:
             return true
         default:
-            println("Invalid URL \(URLString)")
+            print("Invalid URL \(URLString)")
             return false
         }
     }
