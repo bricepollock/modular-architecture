@@ -12,7 +12,7 @@ import UIKit
 extension UIView {
     func animateFadIn() {
         self.alpha = 0.0
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1.0
         })
     }

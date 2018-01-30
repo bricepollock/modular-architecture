@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 public extension UIViewController {
-    public func launchInContainerViewController(containerViewController: UIViewController, animated: Bool = true) {
+    public func launchInContainerViewController(_ containerViewController: UIViewController, animated: Bool = true) {
         containerViewController.addChildViewController(self)
         containerViewController.view.addAndFillWithSubview(view)
-        didMoveToParentViewController(containerViewController)
+        didMove(toParentViewController: containerViewController)
         
         if animated == true {
             view.animateFadIn()

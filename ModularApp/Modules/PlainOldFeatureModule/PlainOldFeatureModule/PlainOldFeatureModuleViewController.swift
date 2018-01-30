@@ -12,7 +12,7 @@ import ModularFoundation
 /**
 *  This is the template that all feature modules should follow for creation of the various objects
 */
-@objc public class PlainOldFeatureModuleViewController: ModuleViewController {
+open class PlainOldFeatureModuleViewController: ModuleViewController {
     
     let flowController: FlowController
     
@@ -28,17 +28,17 @@ import ModularFoundation
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
 
     }
     
     // MARK: Module Protocol
     
-    public override func handleModuleURL(URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
+    open override func handleModuleURL(_ URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
         switch URLString {
-        case .PlainOldFeatureModuleURL(let featureUUID):
+        case .plainOldFeatureModuleURL(let featureUUID):
             flowController.showPlainOldFeatureView(featureUUID) // show module origin view
             return true
         default:

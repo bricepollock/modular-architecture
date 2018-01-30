@@ -17,7 +17,7 @@ class FlowController: NSObject {
     var textPageViewController: UIViewController?
     
     // MARK: Show Methods
-    func showPlainOldFeatureView(featureUUID: String) {
+    func showPlainOldFeatureView(_ featureUUID: String) {
         let textPageViewController = TextPageViewController.createInstance(flowController: self, featureUUID: featureUUID)
         if let moduleViewController = moduleViewController {
             textPageViewController.launchInContainerViewController(moduleViewController, animated: false)
@@ -28,7 +28,7 @@ class FlowController: NSObject {
     // MARK: Dismiss - call the callback handler here or dismiss
     
     func dismiss() {
-        moduleViewController?.dismissViewControllerAnimated(true, completion: nil)
+        moduleViewController?.dismiss(animated: true, completion: nil)
         return
     }
 }

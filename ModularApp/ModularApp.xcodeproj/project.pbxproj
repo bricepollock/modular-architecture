@@ -267,9 +267,11 @@
 				TargetAttributes = {
 					605AA4091B36F56200F0D8A3 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0920;
 					};
 					605AA41E1B36F56200F0D8A3 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0920;
 						TestTargetID = 605AA4091B36F56200F0D8A3;
 					};
 				};
@@ -527,6 +529,8 @@
 				INFOPLIST_FILE = ModularApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -537,6 +541,8 @@
 				INFOPLIST_FILE = ModularApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -555,6 +561,8 @@
 				INFOPLIST_FILE = ModularAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularApp.app/ModularApp";
 			};
 			name = Debug;
@@ -570,6 +578,8 @@
 				INFOPLIST_FILE = ModularAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularApp.app/ModularApp";
 			};
 			name = Release;

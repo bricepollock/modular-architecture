@@ -17,9 +17,9 @@ class TextPageViewController: UIViewController {
     
     // MARK: Life Cycle
     
-    class func createInstance(flowController flowController: FlowController, featureUUID: String) -> TextPageViewController {
-        let moduleStoryboard = UIStoryboard(name: "TextPageViewController", bundle: NSBundle(forClass: TextPageViewController.self))
-        let newViewControllerInstance = moduleStoryboard.instantiateViewControllerWithIdentifier("TextPageViewController") as! TextPageViewController
+    class func createInstance(flowController: FlowController, featureUUID: String) -> TextPageViewController {
+        let moduleStoryboard = UIStoryboard(name: "TextPageViewController", bundle: Bundle(for: TextPageViewController.self))
+        let newViewControllerInstance = moduleStoryboard.instantiateViewController(withIdentifier: "TextPageViewController") as! TextPageViewController
         newViewControllerInstance.presenter = TextPagePresenter(flowController: flowController, featureUUID: featureUUID)
         return newViewControllerInstance
     }
@@ -35,12 +35,12 @@ class TextPageViewController: UIViewController {
         viewModel = presenter?.viewModel
         eventHandler = presenter
         loadViewData(presenter?.viewData)
-        self.view.backgroundColor = UIColor.grayColor()
+        self.view.backgroundColor = UIColor.gray
     }
     
     // MARK: Static View Data Access
     
-    func loadViewData(viewData: TextPageViewData?) {
+    func loadViewData(_ viewData: TextPageViewData?) {
         if let viewData = viewData {
             descriptionLabel.text = viewData.descriptionText
         }

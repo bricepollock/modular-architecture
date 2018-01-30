@@ -19,24 +19,24 @@ public  var SharedModuleRouter: ModuleRouter {
 public protocol ModuleRouter {
     
     // Register consumers for URLs
-    func registerModuleClass(consumer: AnyClass, URLPath: String)
+    func registerModuleClass(_ consumer: AnyClass, URLPath: String)
     
     // Host app is basically our delegate
-    func registerHostApp(hostApp: ModuleURLObserver)
+    func registerHostApp(_ hostApp: ModuleURLObserver)
     
     // Get Module View Controller for an interface
-    func moduleForURLPath(URLPath: String) -> ModuleViewController?
+    func moduleForURLPath(_ URLPath: String) -> ModuleViewController?
     
     func hostApp() -> ModuleURLObserver?
 }
 
 
 class InternalModuleRouter: ModuleRouter {
-    private var moduleURLMap = [String: AnyClass]() // URL -> ModuleViewControllerClass
-    private var hostAppInternal: ModuleURLObserver?
+    fileprivate var moduleURLMap = [String: AnyClass]() // URL -> ModuleViewControllerClass
+    fileprivate var hostAppInternal: ModuleURLObserver?
 
     // MARK: Host App
-    func registerHostApp(hostApp: ModuleURLObserver) {
+    func registerHostApp(_ hostApp: ModuleURLObserver) {
         self.hostAppInternal = hostApp
     }
     
@@ -45,11 +45,11 @@ class InternalModuleRouter: ModuleRouter {
     }
     
     // MARK: Module URLs
-    func registerModuleClass(viewControllerClass: AnyClass, URLPath: String) {
+    func registerModuleClass(_ viewControllerClass: AnyClass, URLPath: String) {
         moduleURLMap[URLPath] = viewControllerClass
     }
     
-    func moduleForURLPath(URLPath: String) -> ModuleViewController? {
+    func moduleForURLPath(_ URLPath: String) -> ModuleViewController? {
         if let moduleViewControllerClass = moduleURLMap[URLPath] as? ModuleViewController.Type {
             return moduleViewControllerClass.init()
         }

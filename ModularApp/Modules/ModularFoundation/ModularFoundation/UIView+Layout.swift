@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 public extension UIView {
-    public func addAndFillWithSubview(subview: UIView) {
+    public func addAndFillWithSubview(_ subview: UIView) {
         self.addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: subview, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: subview, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: subview, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: subview, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: subview, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: subview, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: subview, attribute: NSLayoutAttribute.right, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: subview, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0))
     }
 }

@@ -269,6 +269,7 @@
 				TargetAttributes = {
 					605AA4F81B370F0B00F0D8A3 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0920;
 					};
 					605AA5031B370F0B00F0D8A3 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -474,6 +475,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -489,6 +492,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -12,7 +12,7 @@ import ModularFoundation
 /**
 *  This is the template that all feature modules should follow for creation of the various objects
 */
-@objc public class HomeModuleViewController: ModuleViewController {
+open class HomeModuleViewController: ModuleViewController {
     
     let flowController: FlowController
     
@@ -28,21 +28,21 @@ import ModularFoundation
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.grayColor()
+        view.backgroundColor = UIColor.gray
     }
     
-    public override func viewWillAppear(animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         flowController.showHomeView() // show module origin view        
     }
     
     // MARK: Module Protocol
     
-    public override func handleModuleURL(URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
+    open override func handleModuleURL(_ URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
         switch URLString {
-        case .HomeModuleURL:
+        case .homeModuleURL:
             return true
         default:
             print("Invalid URL \(URLString)")

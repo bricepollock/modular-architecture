@@ -12,7 +12,7 @@ import ModularFoundation
     let rootViewController: UINavigationController
 
     init(window: UIWindow) {
-        let launchModuleURL = ModuleURL.HomeModuleURL
+        let launchModuleURL = ModuleURL.homeModuleURL
         if let homeViewController = SharedModuleRouter.moduleForURLPath(launchModuleURL.path) {
             let mainNavigationController = UINavigationController(rootViewController: homeViewController)
             window.rootViewController = mainNavigationController
@@ -29,17 +29,17 @@ import ModularFoundation
         SharedModuleRouter.registerHostApp(self)
     }
     
-    internal func handleModuleURL(moduleURL: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
+    internal func handleModuleURL(_ moduleURL: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
         switch moduleURL {
-        case .HomeModuleURL:
+        case .homeModuleURL:
             if let homeViewController = SharedModuleRouter.moduleForURLPath(moduleURL.path) {
-                rootViewController.popToRootViewControllerAnimated(true)
+                rootViewController.popToRootViewController(animated: true)
                 rootViewController.pushViewController(homeViewController, animated: false)
                 homeViewController.handleModuleURL(moduleURL)
             }
             return true
             
-        case .PlainOldFeatureModuleURL(let featureUUID):
+        case .plainOldFeatureModuleURL(let featureUUID):
             if let nextModuleViewController = SharedModuleRouter.moduleForURLPath(moduleURL.routingPath) {
                 rootViewController.pushViewController(nextModuleViewController, animated: true)
                 nextModuleViewController.handleModuleURL(moduleURL)

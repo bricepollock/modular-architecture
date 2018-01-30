@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ModuleURLObserver: class {
-    func handleModuleURL(URLString: ModuleURL, successCallback: ModuleURL?, failureCallback: ModuleURL?) -> Bool
+    func handleModuleURL(_ URLString: ModuleURL, successCallback: ModuleURL?, failureCallback: ModuleURL?) -> Bool
 }
 
 public protocol ModuleURLConsumer: class, ModuleURLObserver {    
@@ -17,11 +17,11 @@ public protocol ModuleURLConsumer: class, ModuleURLObserver {
     var failureCallback: ModuleURL? { get }
 }
 
-public class ModuleViewController: UIViewController, ModuleURLConsumer {
-    public var successCallback: ModuleURL?
-    public var failureCallback: ModuleURL?
+open class ModuleViewController: UIViewController, ModuleURLConsumer {
+    open var successCallback: ModuleURL?
+    open var failureCallback: ModuleURL?
     
-    public func handleModuleURL(URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
+    open func handleModuleURL(_ URLString: ModuleURL, successCallback: ModuleURL? = nil, failureCallback: ModuleURL? = nil) -> Bool {
         fatalError("Subclass must implement")
     }
 }

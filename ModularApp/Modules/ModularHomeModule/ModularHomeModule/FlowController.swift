@@ -27,19 +27,19 @@ class FlowController: NSObject {
     
     // MARK: Helper
     func moduleStoryboard() -> UIStoryboard {
-        return UIStoryboard(name: "___PROJECTNAMEASIDENTIFIER___", bundle: NSBundle(forClass: FlowController.self))
+        return UIStoryboard(name: "___PROJECTNAMEASIDENTIFIER___", bundle: Bundle(for: FlowController.self))
     }
     
     // MARK: Dismiss - call the callback handler here or dismiss
     
-    func dismiss(presentingViewController: UIViewController) {
-        presentingViewController.dismissViewControllerAnimated(true, completion:nil)
+    func dismiss(_ presentingViewController: UIViewController) {
+        presentingViewController.dismiss(animated: true, completion:nil)
         return
     }
     
     // MARK: Routing
     
     func launchNextFeature() {
-        SharedModuleRouter.hostApp()?.handleModuleURL(ModuleURL.PlainOldFeatureModuleURL(featureUUID: "as9pd8fnpawef9wnwlmsn"), successCallback: nil, failureCallback: nil)
+        SharedModuleRouter.hostApp()?.handleModuleURL(ModuleURL.plainOldFeatureModuleURL(featureUUID: "as9pd8fnpawef9wnwlmsn"), successCallback: nil, failureCallback: nil)
     }
 }

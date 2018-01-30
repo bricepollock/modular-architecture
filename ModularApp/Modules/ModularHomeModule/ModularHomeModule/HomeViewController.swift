@@ -15,9 +15,9 @@ class HomeViewController: UIViewController {
 
     // MARK: Life Cycle
     
-    class func createInstance(flowController: FlowController) -> HomeViewController {
-        let moduleStoryboard = UIStoryboard(name: "HomeViewController", bundle: NSBundle(forClass: HomeViewController.self))
-        let newViewControllerInstance = moduleStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+    class func createInstance(_ flowController: FlowController) -> HomeViewController {
+        let moduleStoryboard = UIStoryboard(name: "HomeViewController", bundle: Bundle(for: HomeViewController.self))
+        let newViewControllerInstance = moduleStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         
         newViewControllerInstance.presenter = HomePresenter(flowController: flowController)
         return newViewControllerInstance
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         viewModel = presenter?.viewModel
         eventHandler = presenter
         loadViewData()
-        self.view.backgroundColor = UIColor.greenColor()
+        self.view.backgroundColor = UIColor.green
     }
     
     // MARK: Static View Data Access
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
     func loadViewData() {
     }
     
-    @IBAction func didTapNextFeatureButton(sender: AnyObject) {
+    @IBAction func didTapNextFeatureButton(_ sender: AnyObject) {
         eventHandler?.launchNextFeature()
     }
 }

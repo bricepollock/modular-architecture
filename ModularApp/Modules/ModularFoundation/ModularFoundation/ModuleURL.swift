@@ -8,12 +8,12 @@
 import Foundation
 
 public enum ModuleURL: CustomStringConvertible {
-    case HomeModuleURL
-    case PlainOldFeatureModuleURL(featureUUID: String)
+    case homeModuleURL
+    case plainOldFeatureModuleURL(featureUUID: String)
     
-    public func moduleURL() -> NSURL? {
-        let URL = NSURL(string: "pack-list-mobile://app")!
-        return URL.URLByAppendingPathComponent(path)
+    public func moduleURL() -> URL? {
+        let URL = Foundation.URL(string: "pack-list-mobile://app")!
+        return URL.appendingPathComponent(path)
     }
     
     public var description: String {
@@ -30,8 +30,8 @@ public protocol Path {
 extension ModuleURL: Path {
     public var path: String {
         switch self {
-        case .HomeModuleURL: return "/home"
-        case .PlainOldFeatureModuleURL(let featureUUID): return "/plainOldFeature/\(featureUUID)"
+        case .homeModuleURL: return "/home"
+        case .plainOldFeatureModuleURL(let featureUUID): return "/plainOldFeature/\(featureUUID)"
         }
     }
 }
@@ -41,7 +41,7 @@ extension ModuleURL: Path {
 extension ModuleURL {
     public var routingPath: String {
         switch self {
-        case .PlainOldFeatureModuleURL(let featureUUID): return "/plainOldFeature/:featureUUID"
+        case .plainOldFeatureModuleURL(let featureUUID): return "/plainOldFeature/:featureUUID"
         default: return path
         }
     }

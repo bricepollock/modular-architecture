@@ -23,8 +23,8 @@ extension AppDelegate {
     }
     
     func registerModuleURLs() {
-        SharedModuleRouter.registerModuleClass(HomeModuleViewController.self, URLPath: ModuleURL.HomeModuleURL.path)
-        SharedModuleRouter.registerModuleClass(PlainOldFeatureModuleViewController.self, URLPath: ModuleURL.PlainOldFeatureModuleURL(featureUUID: "").routingPath)
+        SharedModuleRouter.registerModuleClass(HomeModuleViewController.self, URLPath: ModuleURL.homeModuleURL.path)
+        SharedModuleRouter.registerModuleClass(PlainOldFeatureModuleViewController.self, URLPath: ModuleURL.plainOldFeatureModuleURL(featureUUID: "").routingPath)
     }
 }
 
